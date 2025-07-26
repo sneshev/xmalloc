@@ -6,7 +6,7 @@
 /*   By: sneshev <sneshev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 18:11:10 by sneshev           #+#    #+#             */
-/*   Updated: 2025/07/26 19:38:45 by sneshev          ###   ########.fr       */
+/*   Updated: 2025/07/26 19:57:31 by sneshev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,4 @@ int	main(void)
 	write_str(str);
 	free_registry();
 	write_str(str);
-	
 }

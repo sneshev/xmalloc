@@ -6,7 +6,7 @@
 /*   By: sneshev <sneshev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 18:43:16 by sneshev           #+#    #+#             */
-/*   Updated: 2025/07/26 19:38:37 by sneshev          ###   ########.fr       */
+/*   Updated: 2025/07/26 19:57:08 by sneshev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	new_reg_entry(void *address, t_reg_type type)
 	entry = malloc(1 * sizeof(T_REG_ENTRY));
 	if (!entry)
 		return (-1);
-	entry->address = address;
+	entry->address = &address;
 	entry->type = type;
-	registry->reg[registry->count] =entry;
+	registry->reg[registry->count] = entry;
 	registry->count++;
 	return (1);
 }
