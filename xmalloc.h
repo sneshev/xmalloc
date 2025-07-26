@@ -6,7 +6,7 @@
 /*   By: sneshev <sneshev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 18:10:27 by sneshev           #+#    #+#             */
-/*   Updated: 2025/07/26 19:01:00 by sneshev          ###   ########.fr       */
+/*   Updated: 2025/07/26 19:37:19 by sneshev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef enum e_reg_type
 	INT_ARR,
 	T_LIST,
 	T_ENV,
+	T_REGISTRY,
+	T_REG_ENTRY,
 	CLEANUP_TYPE_COUNT
 }	t_reg_type;
 
@@ -39,6 +41,12 @@ typedef struct s_registry
 }	t_registry;
 
 void		free_reg_entry(t_reg_entry *reg);
-t_reg_entry	*new_reg_entry(void *address, t_reg_type type);
+int			new_reg_entry(void *address, t_reg_type type);
+
+int			init_registry();
+t_registry	*get_registry();
+int			free_registry();
+void		*xmalloc(size_t size, t_reg_type type);
+
 
 #endif
