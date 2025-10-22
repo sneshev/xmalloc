@@ -11,14 +11,14 @@
 typedef enum e_reg_type
 {
 	UNKNOWN,
-	T_REGISTRY,
-	T_REG_ENTRY,
 	CHAR,
 	INT,
-	CHAR_P, //must be NULLed 
-	INT_P, //must be NULLed
-	CHAR_PP,
-	INT_PP,
+	CHAR_P,		//must be NULLed 
+	INT_P,		//must be NULLed
+	CHAR_PP,	//.. in both directions
+	INT_PP,		//.. in both directions
+	T_REGISTRY,
+	T_REG_ENTRY,
 	// add custom types
 	CLEANUP_TYPE_COUNT
 }	t_reg_type;
