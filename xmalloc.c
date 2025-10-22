@@ -7,14 +7,16 @@ size_t	find_size(t_reg_type type)
 {
 	if (type == CHAR)
 		return (sizeof(char));
-	else if (type == CHAR_ARR)
+	else if (type == INT)
+		return (sizeof(int));
+	else if (type == CHAR_P)
 		return (sizeof(char *));
-	else if (type == INT_ARR)
+	else if (type == INT_P)
 		return (sizeof(int *));
-	// else if (type == T_LIST)
-	// 	return (sizeof(t_list *));
-	// else if (type == T_ENV)
-	// 	return (sizeof(t_env *));
+	else if (type == CHAR_PP)
+		return (sizeof(char **));
+	else if (type == INT_PP)
+		return (sizeof(int **));
 	else if (type == T_REG_ENTRY)
 		return (sizeof(t_reg_entry));
 	else if (type == T_REGISTRY)
