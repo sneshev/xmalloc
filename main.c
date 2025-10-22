@@ -13,6 +13,19 @@ char *create_str()
 	return (str);
 }
 
+char *create_str2()
+{
+	char *str;
+
+	str = xcalloc(5, CHAR);
+	str[0] = 'W';
+	str[1] = 'S';
+	str[2] = 'A';
+	str[3] = 'D';
+	str[4] = '\0';
+	return (str);
+}
+
 void	write_str(char *str)
 {
 	printf("%s\n", str);
@@ -21,7 +34,7 @@ void	write_str(char *str)
 int main() {
 	char *str = create_str();
 	char *str2 = create_str();
-	char *str3 = create_str();
+	char *str3 = create_str2();
 	write_str(str2);
 	xfree(&str2);
 	xfree(&str);
