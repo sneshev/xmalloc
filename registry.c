@@ -48,5 +48,4 @@ void new_reg_entry(void **address, t_reg_type type)
 	entry->type = type;
 	registry->reg[registry->count] = entry;
 	registry->count++;
-	printf("reg->addr%%p = %p\n", entry->address);
 }

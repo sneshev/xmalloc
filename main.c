@@ -20,7 +20,16 @@ void	write_str(char *str)
 
 int main() {
 	char *str = create_str();
-	write_str(str);
-	printf("str%%p = %p\n", str);
+	char *str2 = create_str();
+	char *str3 = create_str();
+	write_str(str2);
+	xfree(&str);
+	char *str4 = create_str();
+	xfree(&str2);
+	char *str5 = create_str();
+	write_str(str3);
+	write_str(str4);
+	write_str(str5);
+
 	free_registry();
 }

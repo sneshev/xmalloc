@@ -2,14 +2,35 @@
 
 t_registry **registry_addr();
 
-// //as a start only with single pointers and not arrays of arrays
-// void xfree(void **addr, t_reg_type type) {
-// 	t_registry *registry = registry_addr();
+// can call recursively on addresses inside the array (if is an array)
+void xfree_entry(t_reg_entry *reg) {
+	// t_reg_type type = reg->type;
+	free(reg->address);
+	free(reg);
+	//move addresses backwards to fill the gap
+}
 
+//as a start only with single pointers and not arrays of arrays
+void xfree(void *address) {
+	void **addr = (void **)address;
+	t_registry *registry = *registry_addr();
+	int i = 0;
 
+	while (i < registry->count) {
+		t_reg_entry *reg = registry->reg[i];
+		if (i == LASTENTRY) {
+			registry = (t_registry *)registry->reg[LASTENTRY]; i = 0;
+		}
+		if (reg && reg->address == *addr) {
+			xfree_entry(reg);
+			registry->reg[i] = NULL;
+			*addr = NULL;
+			return ;
+		}
+		i++;
+	}
 
-
-// }
+}
 
 
 

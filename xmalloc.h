@@ -33,7 +33,7 @@ typedef struct s_registry
 
 
 void *xmalloc(size_t size, t_reg_type type);
-// void xfree(void **addr, t_reg_type type);
+void xfree(void *address);
 
 void free_registry();
 
