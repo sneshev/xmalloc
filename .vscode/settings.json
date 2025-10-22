@@ -1,0 +1,5 @@
+{
+	"files.associations": {
+		"xmalloc.h": "c"
+	}
+}
