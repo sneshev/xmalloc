@@ -1,5 +1,7 @@
 #include "xmalloc.h"
 
+void		new_reg_entry(void **address, t_reg_type type);
+
 size_t	find_size(t_reg_type type)
 {
 	if (type == CHAR)

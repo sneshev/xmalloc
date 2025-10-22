@@ -1,11 +1,11 @@
 #ifndef XMALLOC_H
 # define XMALLOC_H
 
-#include <stdlib.h>
-#include <stdio.h>
+# include <stdlib.h>
+# include <stdio.h>
 
-#define MAXCOUNT 128
-#define LASTENTRY (MAXCOUNT - 1)
+# define MAXCOUNT 128
+# define LASTENTRY (MAXCOUNT - 1)
 
 typedef enum e_reg_type
 {
@@ -32,16 +32,10 @@ typedef struct s_registry
 }	t_registry;
 
 
+void *xmalloc(size_t size, t_reg_type type);
+// void xfree(void **addr, t_reg_type type);
 
-
-void		free_reg_entry(t_reg_entry *reg);
-void		new_reg_entry(void **address, t_reg_type type);
-
-int			init_registry();
-t_registry	*get_registry();
-void		free_registry();
-void		*xmalloc(size_t size, t_reg_type type);
-// void		xfree();
+void free_registry();
 
 
 #endif

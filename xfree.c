@@ -1,10 +1,20 @@
 #include "xmalloc.h"
 
+t_registry **registry_addr();
 
-//as a start only with single pointers and not arrays of arrays
-void xfree(void **addr, t_reg_type type) {
-	t_registry *registry = get_registry();
-}
+// //as a start only with single pointers and not arrays of arrays
+// void xfree(void **addr, t_reg_type type) {
+// 	t_registry *registry = registry_addr();
+
+
+
+
+// }
+
+
+
+
+
 /*
 	.find the right address
 	.free the address and set the reg entry to NULL
