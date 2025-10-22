@@ -32,6 +32,7 @@ t_registry *get_registry()
 	}
 	if (registry->count == MAXCOUNT - 1) {
 		init_registry((t_registry **)&registry->reg[LASTENTRY]);
+		registry->count++;
 		registry = (t_registry *)registry->reg[LASTENTRY];
 	}
 	

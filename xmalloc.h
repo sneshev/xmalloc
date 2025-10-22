@@ -4,7 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-# define MAXCOUNT 128
+# define MAXCOUNT 2
 # define LASTENTRY (MAXCOUNT - 1)
 
 typedef enum e_reg_type

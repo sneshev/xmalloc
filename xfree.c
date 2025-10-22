@@ -17,10 +17,10 @@ void xfree(void *address) {
 	int i = 0;
 
 	while (i < registry->count) {
-		t_reg_entry *reg = registry->reg[i];
 		if (i == LASTENTRY) {
 			registry = (t_registry *)registry->reg[LASTENTRY]; i = 0;
 		}
+		t_reg_entry *reg = registry->reg[i];
 		if (reg && reg->address == *addr) {
 			xfree_entry(reg);
 			registry->reg[i] = NULL;
@@ -29,7 +29,6 @@ void xfree(void *address) {
 		}
 		i++;
 	}
-
 }
 
 
