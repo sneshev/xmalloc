@@ -21,6 +21,6 @@ void	write_str(char *str)
 int main() {
 	char *str = create_str();
 	write_str(str);
+	printf("str%%p = %p\n", str);
 	free_registry();
-	// write_str(str);
 }
