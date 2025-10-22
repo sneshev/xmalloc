@@ -32,10 +32,12 @@ typedef struct s_registry
 }	t_registry;
 
 
+// functions
 void *xmalloc(size_t size, t_reg_type type);
+void *xcalloc(size_t size, t_reg_type type);
 void xfree(void *address);
 
+// at end of progrm
 void free_registry();
-
 
 #endif

@@ -1,5 +1,7 @@
 #include "xmalloc.h"
 
+void xalloc_err();
+
 t_registry **registry_addr()
 {
 	static t_registry	*registry = NULL;
@@ -13,9 +15,7 @@ static int	init_registry(t_registry **reg_addr)
 		return (0);
 	*reg_addr = calloc(1, sizeof(t_registry));
 	if (!*reg_addr) {
-    	printf("malloc err\n");
-		free_registry();
-		exit(EXIT_FAILURE);
+		xalloc_err();
 	}
 	(*reg_addr)->count = 0;
 	return (1);
@@ -43,7 +43,8 @@ void new_reg_entry(void **address, t_reg_type type)
 {
 	t_registry	*registry = get_registry();
 	t_reg_entry	*entry = calloc(1, sizeof(t_reg_entry));
-	if (!entry) { printf("malloc err\n"); free_registry(); exit(EXIT_FAILURE); }
+	if (!entry)
+		xalloc_err();
 
 	entry->address = *address;
 	entry->type = type;

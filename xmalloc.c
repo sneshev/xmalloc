@@ -1,6 +1,7 @@
 #include "xmalloc.h"
 
-void		new_reg_entry(void **address, t_reg_type type);
+void new_reg_entry(void **address, t_reg_type type);
+void xalloc_err();
 
 size_t	find_size(t_reg_type type)
 {
@@ -28,10 +29,20 @@ void *xmalloc(size_t size, t_reg_type type)
 
 	ptr = malloc(size * find_size(type));
 	if (!ptr)
-		printf("malloc err\n");
-	else
-	{
-		new_reg_entry(&ptr, type);
-	}
+		xalloc_err();
+	
+	new_reg_entry(&ptr, type);
+	return (ptr);
+}
+
+void *xcalloc(size_t size, t_reg_type type)
+{
+	void *ptr;
+
+	ptr = calloc(size, find_size(type));
+	if (!ptr)
+		xalloc_err();
+	
+	new_reg_entry(&ptr, type);
 	return (ptr);
 }
