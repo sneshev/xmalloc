@@ -22,10 +22,11 @@ void move_entries_back(t_registry *registry) {
 
 // can call recursively on addresses inside the array (if is an array)
 static void xfree_entry(t_registry *registry, t_reg_entry *reg) {
+	(void)registry;
 	// t_reg_type type = reg->type;
 	free(reg->address);
 	free(reg);
-	move_entries_back(registry);
+	// move_entries_back(registry);
 }
 
 //as a start only with single pointers and not arrays of arrays

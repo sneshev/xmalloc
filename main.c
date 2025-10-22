@@ -37,6 +37,8 @@ int main() {
 	char *str3 = create_str();
 	xfree(&str2);
 	char *str4 = create_str();
+	xfree(&str4);
+	xfree(&str);
 	printf("str5 = %s\n", str);
 	printf("str2 = %s\n", str2);
 	printf("str3 = %s\n", str3);
