@@ -4,8 +4,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-# define MAXCOUNT 2
+# define MAXCOUNT 128
 # define LASTENTRY (MAXCOUNT - 1)
+# define ISTOOMUCH > 100
 
 typedef enum e_reg_type
 {
@@ -42,3 +43,10 @@ void xfreeptr(void *address);
 void free_registry(); // at end of progrm
 
 #endif
+
+
+/*
+   [0]   [1]   [2]    [3]   [4]   [5]
+	0     1     NULL   3     4     5 .     count == 6
+	0     1     3      4     5     .       count == 5
+*/

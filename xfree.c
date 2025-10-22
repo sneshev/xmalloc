@@ -2,12 +2,30 @@
 
 t_registry **registry_addr();
 
+void move_entries_back(t_registry *registry) {
+	if (registry->count == MAXCOUNT)
+		return ;
+
+	registry->count--;
+	int i = 0;
+	while (registry->reg[i])
+		i++;
+	if (registry->count - i ISTOOMUCH)
+		return ;
+	
+	while (i < registry->count) {
+		registry->reg[i] = registry->reg[i + 1];
+		i++;
+	}
+	registry->reg[registry->count] = NULL;
+}
+
 // can call recursively on addresses inside the array (if is an array)
-void xfree_entry(t_reg_entry *reg) {
+static void xfree_entry(t_registry *registry, t_reg_entry *reg) {
 	// t_reg_type type = reg->type;
 	free(reg->address);
 	free(reg);
-	//move addresses backwards to fill the gap
+	move_entries_back(registry);
 }
 
 //as a start only with single pointers and not arrays of arrays
@@ -22,9 +40,10 @@ void xfree(void *address) {
 		}
 		t_reg_entry *reg = registry->reg[i];
 		if (reg && reg->address == *addr) {
-			xfree_entry(reg);
+			xfree_entry(registry, reg);
 			registry->reg[i] = NULL;
 			*addr = NULL;
+			move_entries_back(registry);
 			return ;
 		}
 		i++;
@@ -46,6 +65,7 @@ void xfreeptr(void *address) {
 			free(reg);
 			registry->reg[i] = NULL;
 			*addr = NULL;
+			move_entries_back(registry);
 			return ;
 		}
 		i++;
