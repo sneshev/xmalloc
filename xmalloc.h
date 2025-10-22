@@ -35,7 +35,7 @@ typedef struct s_registry
 
 
 void		free_reg_entry(t_reg_entry *reg);
-void		new_reg_entry(void *address, t_reg_type type);
+void		new_reg_entry(void **address, t_reg_type type);
 
 int			init_registry();
 t_registry	*get_registry();

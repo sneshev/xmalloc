@@ -1,6 +1,5 @@
 #include "xmalloc.h"
 
-
 char *create_str()
 {
 	char *str;
@@ -18,7 +17,6 @@ void	write_str(char *str)
 {
 	printf("%s\n", str);
 }
-
 
 int main() {
 	char *str = create_str();

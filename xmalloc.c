@@ -29,7 +29,7 @@ void *xmalloc(size_t size, t_reg_type type)
 		printf("malloc err\n");
 	else
 	{
-		new_reg_entry(ptr, type);
+		new_reg_entry(&ptr, type);
 	}
 	return (ptr);
 }
