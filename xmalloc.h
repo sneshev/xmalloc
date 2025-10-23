@@ -39,6 +39,13 @@ typedef struct s_registry
 void *xmalloc(size_t nmemb, t_reg_type type);
 void *xcalloc(size_t nmemb, t_reg_type type);
 
+/*
+	.perhaps i dont need to pass the address to xfree(). 
+		-> i can compare the dereferenced address because it
+		should be pointing to the same memory. Only then I can
+		not NULL the pointer in the function where I call
+		xfree() but that is fine because normal free doesn't either
+*/
 void xfree(void *address);
 void xfree_ptr(void *address);
 void xfree_node(void *address);
@@ -47,4 +54,3 @@ void free_registry(); // frees whole registry and destroys it
 void xexit(int status); // destroys registry and exits with status
 
 #endif
-

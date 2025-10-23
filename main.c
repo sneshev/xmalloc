@@ -69,3 +69,7 @@ int main() {
 	print_arr(arr);
 	xexit(0);
 }
+
+/*
+	see header
+*/
