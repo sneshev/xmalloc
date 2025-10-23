@@ -2,7 +2,6 @@
 # define XMALLOC_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 
 # define MAXCOUNT 128
