@@ -4,6 +4,7 @@
 #define MEMERRORLEN 34
 #define MEMERRORCODE 2
 
+// destroys registry and exits with status
 void xexit(int status) {
 	free_registry();
 	exit(status);

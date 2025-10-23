@@ -15,6 +15,13 @@ void move_entries_back(t_registry *registry, int i) {
 	registry->reg[registry->count] = NULL;
 }
 
+/*
+	PASS THE ADDRESS OF THE POINTER!
+	-> xfree(&str);
+
+	desc: frees the address and deletes it from the registry.
+	Does not free anything else.
+*/
 void xfree_ptr(void *address) {
 	void **addr = (void **)address;
 	t_registry *registry = *registry_addr();

@@ -24,6 +24,7 @@ void free_this_registry(t_registry *registry) {
 	free(registry);
 }
 
+// frees whole registry and destroys it
 void free_registry() {
 	t_registry *root = *registry_addr();
 	if (!root)

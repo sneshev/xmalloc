@@ -36,23 +36,15 @@ typedef struct s_registry
 }	t_registry;
 
 
-// allocation functions
-void *xmalloc(size_t size, t_reg_type type);
-void *xcalloc(size_t size, t_reg_type type);
+void *xmalloc(size_t nmemb, t_reg_type type);
+void *xcalloc(size_t nmemb, t_reg_type type);
 
-// freeing functions
 void xfree(void *address);
 void xfree_ptr(void *address);
-// void xfree_node(void *address);
+void xfree_node(void *address);
 void free_registry(); // frees whole registry and destroys it
 
-// util functions
 void xexit(int status); // destroys registry and exits with status
+
 #endif
 
-
-/*
-   [0]   [1]   [2]    [3]   [4]   [5]
-	0     1     NULL   3     4     5 .     count == 6
-	0     1     3      4     5     .       count == 5
-*/
