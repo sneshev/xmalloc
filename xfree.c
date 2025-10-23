@@ -1,35 +1,10 @@
 #include "xmalloc.h"
 
+typedef void	(*free_func_t)(void *);
+free_func_t 	find_function(t_reg_type type);
+
 t_registry	**registry_addr();
-void	move_entries_back(t_registry *registry, int i);
-
-typedef void (*free_func_t)(void *);
-
-void free_arr(void *address) {
-	void **arr = (void **)address;
-	for (int i = 0; arr[i]; i++) {
-		xfree(&arr[i]);
-	}
-	free(arr);
-}
-
-void wtfudoin(void *address) {
-	(void)address;
-	write(2, "wrong xfree function\n", 21);
-	xexit(1);
-}
-
-
-free_func_t find_function(t_reg_type type) {
-	if (type == XCHAR || type == XINT)
-		return (free);
-	if (type == XCHAR_P || type == XINT_P)
-		return (free_arr);
-	else
-		return (wtfudoin);
-}
-
-
+void		move_entries_back(t_registry *registry, int i);
 
 // can call recursively on addresses inside the array (if is an array)
 static void xfree_entry(t_reg_entry *reg) {

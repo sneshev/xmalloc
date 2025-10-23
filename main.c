@@ -42,6 +42,8 @@ char **create_arr()
 }
 
 void print_arr(char **arr) {
+	if (!arr || !*arr)
+		return ;
 	int i = 0;
 	do {
 		printf("arr[%d]: %s\n", i, arr[i]);
@@ -64,5 +66,6 @@ int main() {
 	print_arr(arr);
 	write_str(str2);
 	xfree(&arr);
+	print_arr(arr);
 	xexit(0);
 }
