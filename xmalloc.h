@@ -10,15 +10,15 @@
 
 typedef enum e_reg_type
 {
-	UNKNOWN,
-	CHAR,
-	INT,
-	CHAR_P,		//must be NULLed 
-	INT_P,		//must be NULLed
-	CHAR_PP,	//.. in both directions
-	INT_PP,		//.. in both directions
-	T_REGISTRY,
-	T_REG_ENTRY,
+	XUNKNOWN,
+	XCHAR,
+	XINT,
+	XCHAR_P,		//must be NULLed 
+	XINT_P,		//must be NULLed
+	XCHAR_PP,	//.. in both directions
+	XINT_PP,		//.. in both directions
+	X_REGISTRY,
+	X_REG_ENTRY,
 	// add custom types
 	CLEANUP_TYPE_COUNT
 }	t_reg_type;
@@ -43,7 +43,7 @@ void *xcalloc(size_t size, t_reg_type type);
 // freeing functions
 void xfree(void *address);
 void xfree_ptr(void *address);
-void xfree_node(void *address);
+// void xfree_node(void *address);
 void free_registry(); // frees whole registry and destroys it
 
 // util functions

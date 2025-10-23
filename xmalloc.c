@@ -5,21 +5,21 @@ void xerr();
 
 static size_t find_size(t_reg_type type)
 {
-	if (type == CHAR)
+	if (type == XCHAR)
 		return (sizeof(char));
-	else if (type == INT)
+	else if (type == XINT)
 		return (sizeof(int));
-	else if (type == CHAR_P)
+	else if (type == XCHAR_P)
 		return (sizeof(char *));
-	else if (type == INT_P)
+	else if (type == XINT_P)
 		return (sizeof(int *));
-	else if (type == CHAR_PP)
+	else if (type == XCHAR_PP)
 		return (sizeof(char **));
-	else if (type == INT_PP)
+	else if (type == XINT_PP)
 		return (sizeof(int **));
-	else if (type == T_REG_ENTRY)
+	else if (type == X_REG_ENTRY)
 		return (sizeof(t_reg_entry));
-	else if (type == T_REGISTRY)
+	else if (type == X_REGISTRY)
 		return (sizeof(t_registry));
 	else
 		return (0);

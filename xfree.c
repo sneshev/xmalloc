@@ -3,12 +3,40 @@
 t_registry	**registry_addr();
 void	move_entries_back(t_registry *registry, int i);
 
+typedef void (*free_func_t)(void *);
+
+void free_arr(void *address) {
+	void **arr = (void **)address;
+	for (int i = 0; arr[i]; i++) {
+		xfree(arr[i]);
+	}
+	free(arr);
+}
+
+void wtfudoin(void *address) {
+	(void)address;
+	write(2, "wrong xfree function\n", 21);
+	xexit(1);
+}
+
+
+free_func_t find_function(t_reg_type type) {
+	if (type == XCHAR || type == XINT)
+		return (free);
+	if (type == XCHAR_P || type == XINT_P)
+		return (free_arr);
+	else
+		return (wtfudoin);
+}
+
+
+
 // can call recursively on addresses inside the array (if is an array)
 static void xfree_entry(t_reg_entry *reg) {
-	// t_reg_type type = reg->type;
-	free(reg->address);
+	t_reg_type type = reg->type;
+	free_func_t free_whole = find_function(type);
+	free_whole(reg->address);
 	free(reg);
-	// move_entries_back(registry);
 }
 
 //as a start only with single pointers and not arrays of arrays

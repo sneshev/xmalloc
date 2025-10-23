@@ -6,7 +6,7 @@ char *create_str()
 {
 	char *str;
 
-	str = xmalloc(5, CHAR);
+	str = xmalloc(5, XCHAR);
 	str[0] = 'W';
 	str[1] = 'S';
 	str[2] = 'A';
@@ -19,13 +19,35 @@ char *create_str2()
 {
 	char *str;
 
-	str = xcalloc(5, CHAR);
+	str = xcalloc(5, XCHAR);
 	str[0] = 'W';
 	str[1] = 'S';
 	str[2] = 'A';
 	str[3] = 'D';
 	str[4] = '\0';
 	return (str);
+}
+
+char **create_arr()
+{
+	char **arr;
+
+	arr = xmalloc(5, XCHAR_P);
+	arr[0] = create_str();
+	arr[1] = create_str();
+	arr[2] = create_str();
+	arr[3] = create_str();
+	arr[4] = NULL;
+	return (arr);
+}
+
+void print_arr(char **arr) {
+	int i = 0;
+	do {
+		printf("arr[%d]: %s\n", i, arr[i]);
+		i++;
+	} while(arr[i]);
+	printf("arr[%d]: %s\n", i, arr[i]);
 }
 
 void	write_str(char *str)
@@ -35,18 +57,12 @@ void	write_str(char *str)
 
 int main() {
 	char *str = create_str();
-	char *str2 = create_str();
-	char *str3 = create_str();
-	xfree(&str2);
-	char *str4 = create_str();
-	xfree_ptr(&str4);
-	xfree(&str);
-	char *str5 = create_str();
-	printf("str = %s\n", str);
-	printf("str2 = %s\n", str2);
-	printf("str3 = %s\n", str3);
-	printf("str4 = %s\n", str4);
-	printf("str5 = %s\n", str5);
+	char **arr = create_arr();
+	char *str2 = create_str2();
 
+	write_str(str);
+	print_arr(arr);
+	write_str(str2);
+	xfree(arr);
 	xexit(0);
 }
