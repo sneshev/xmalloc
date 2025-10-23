@@ -27,7 +27,7 @@ static void wtfudoin(void *address) {
 	xexit(1);
 }
 
-// for xfree()
+// for xfree_node()
 free_func_t find_function2(t_reg_type type) {
 	if (type == XCHAR || type == XINT)
 		return (free);
