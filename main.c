@@ -39,7 +39,7 @@ int main() {
 	char *str3 = create_str();
 	xfree(&str2);
 	char *str4 = create_str();
-	xfree(&str4);
+	xfree_ptr(&str4);
 	xfree(&str);
 	char *str5 = create_str();
 	printf("str = %s\n", str);

@@ -3,7 +3,7 @@
 void new_reg_entry(void **address, t_reg_type type);
 void xerr();
 
-size_t	find_size(t_reg_type type)
+static size_t find_size(t_reg_type type)
 {
 	if (type == CHAR)
 		return (sizeof(char));

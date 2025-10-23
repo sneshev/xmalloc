@@ -42,11 +42,12 @@ void *xcalloc(size_t size, t_reg_type type);
 
 // freeing functions
 void xfree(void *address);
-void xfreeptr(void *address);
-void free_registry(); // at end of progrm
+void xfree_ptr(void *address);
+void xfree_node(void *address);
+void free_registry(); // frees whole registry and destroys it
 
 // util functions
-void xexit(int status); //frees registry and exits with exitcode
+void xexit(int status); // destroys registry and exits with status
 #endif
 
 

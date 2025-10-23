@@ -1,21 +1,18 @@
 #include "xmalloc.h"
 
-t_registry **registry_addr();
+t_registry	**registry_addr();
+void	move_entries_back(t_registry *registry, int i);
 
-void move_entries_back(t_registry *registry, int i) {
-	if (registry->count == MAXCOUNT)
-		return ;
-	else if (registry->count - i ISTOOMUCH)
-		return ;
-	
-	while (i < registry->count) {
-		registry->reg[i] = registry->reg[i + 1];
-		i++;
-	}
-	registry->reg[registry->count] = NULL;
+// can call recursively on addresses inside the array (if is an array)
+static void xfree_entry(t_reg_entry *reg) {
+	// t_reg_type type = reg->type;
+	free(reg->address);
+	free(reg);
+	// move_entries_back(registry);
 }
 
-void xfree_ptr(void *address) {
+//as a start only with single pointers and not arrays of arrays
+void xfree_node(void *address) {
 	void **addr = (void **)address;
 	t_registry *registry = *registry_addr();
 	int i = 0;
@@ -26,8 +23,7 @@ void xfree_ptr(void *address) {
 		}
 		t_reg_entry *reg = registry->reg[i];
 		if (reg && reg->address == *addr) {
-			free(reg->address);
-			free(reg);
+			xfree_entry(reg);
 			registry->reg[i] = NULL;
 			*addr = NULL;
 			if (registry->count != MAXCOUNT)
