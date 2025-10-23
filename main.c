@@ -63,6 +63,6 @@ int main() {
 	write_str(str);
 	print_arr(arr);
 	write_str(str2);
-	xfree(arr);
+	xfree(&arr);
 	xexit(0);
 }

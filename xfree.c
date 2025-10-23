@@ -8,7 +8,7 @@ typedef void (*free_func_t)(void *);
 void free_arr(void *address) {
 	void **arr = (void **)address;
 	for (int i = 0; arr[i]; i++) {
-		xfree(arr[i]);
+		xfree(&arr[i]);
 	}
 	free(arr);
 }
