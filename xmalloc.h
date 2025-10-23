@@ -3,6 +3,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 # define MAXCOUNT 128
 # define LASTENTRY (MAXCOUNT - 1)
@@ -45,6 +46,8 @@ void xfree(void *address);
 void xfreeptr(void *address);
 void free_registry(); // at end of progrm
 
+// util functions
+void xexit(int status); //frees registry and exits with exitcode
 #endif
 
 

@@ -1,6 +1,6 @@
 #include "xmalloc.h"
 
-void xalloc_err();
+void xerr();
 
 t_registry **registry_addr()
 {
@@ -15,7 +15,7 @@ static int	init_registry(t_registry **reg_addr)
 		return (0);
 	*reg_addr = calloc(1, sizeof(t_registry));
 	if (!*reg_addr) {
-		xalloc_err();
+		xerr();
 	}
 	(*reg_addr)->count = 0;
 	return (1);
@@ -44,7 +44,7 @@ void new_reg_entry(void **address, t_reg_type type)
 	t_registry	*registry = get_registry();
 	t_reg_entry	*entry = calloc(1, sizeof(t_reg_entry));
 	if (!entry)
-		xalloc_err();
+		xerr();
 
 	entry->address = *address;
 	entry->type = type;
