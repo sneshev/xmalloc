@@ -30,7 +30,6 @@ typedef enum e_reg_type
 typedef struct s_reg_entry
 {
 	void		*address;
-	uintptr_t	pointsto; //not needed, can cast it inside xfree()
 	t_reg_type	type;
 }	t_reg_entry;
 

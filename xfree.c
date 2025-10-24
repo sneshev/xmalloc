@@ -7,7 +7,6 @@ typedef void	(*free_func_t)(void *);
 free_func_t find_function(t_reg_type type);
 
 
-
 static void xfree_entry(t_reg_entry *reg) {
 	t_reg_type type = reg->type;
 	free_func_t free_whole = find_function(type);
@@ -33,7 +32,8 @@ void xfree(void *address_ptr) {
 			registry = (t_registry *)registry->reg[LASTENTRY]; i = 0;
 		}
 		t_reg_entry *reg = registry->reg[i];
-		if (reg && reg->pointsto == address) {
+		uintptr_t pointsto = (uintptr_t)reg->address;
+		if (reg && pointsto == address) {
 			xfree_entry(reg);
 			registry->reg[i] = NULL;
 			if (registry->count != MAXCOUNT)

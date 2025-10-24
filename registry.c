@@ -47,7 +47,6 @@ void new_reg_entry(void *address, t_reg_type type)
 		xerr();
 
 	entry->address = address;
-	entry->pointsto = (uintptr_t)address;
 	entry->type = type;
 	registry->reg[registry->count] = entry;
 	registry->count++;
