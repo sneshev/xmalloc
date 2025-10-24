@@ -17,6 +17,9 @@ static size_t find_size(t_reg_type type)
 		return (sizeof(char **));
 	else if (type == XINT_PP)
 		return (sizeof(int **));
+	/* add your own custom types
+	else if (type == )
+		return (sizeof()); */
 	else if (type == X_REG_ENTRY)
 		return (sizeof(t_reg_entry));
 	else if (type == X_REGISTRY)
