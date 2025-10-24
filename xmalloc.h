@@ -52,7 +52,7 @@ void *xcalloc(size_t nmemb, t_reg_type type);
 void xfree(void *address);
 void xfree_ptr(void *address);
 void xfree_node(void *address);
-void free_registry(); // frees whole registry and destroys it
+void xfree_registry(); // frees whole registry and destroys it
 
 void xexit(int status); // destroys registry and exits with status
 

@@ -6,7 +6,7 @@
 
 // destroys registry and exits with status
 void xexit(int status) {
-	free_registry();
+	xfree_registry();
 	exit(status);
 }
 
