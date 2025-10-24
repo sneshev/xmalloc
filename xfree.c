@@ -15,6 +15,14 @@ static void xfree_entry(t_reg_entry *reg) {
 	free(reg);
 }
 
+/*
+	Searches the alloc registry for the entry.
+	Frees its address and any subaddress available.
+
+	For example, if you pass char **, frees with free_arr().
+
+	arrays must be NULL-ed.
+*/
 void xfree(void *address_ptr) {
 	t_registry *registry = *registry_addr();
 	uintptr_t address = (uintptr_t)address_ptr;
