@@ -1,4 +1,4 @@
-#include "xmalloc.h"
+#include "../xmalloc.h"
 
 t_registry	**registry_addr();
 void		move_entries_back(t_registry *registry, int i);

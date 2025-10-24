@@ -1,4 +1,4 @@
-#include "xmalloc.h"
+#include "../xmalloc.h"
 
 void xerr();
 
