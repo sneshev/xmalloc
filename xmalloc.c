@@ -1,6 +1,6 @@
 #include "xmalloc.h"
 
-void new_reg_entry(void **address, t_reg_type type);
+void new_reg_entry(void *address, t_reg_type type);
 void xerr();
 
 static size_t find_size(t_reg_type type)
@@ -39,7 +39,7 @@ void *xmalloc(size_t nmemb, t_reg_type type)
 	if (!ptr)
 		xerr();
 	
-	new_reg_entry(&ptr, type);
+	new_reg_entry(ptr, type);
 	return (ptr);
 }
 
@@ -58,6 +58,6 @@ void *xcalloc(size_t nmemb, t_reg_type type)
 	if (!ptr)
 		xerr();
 	
-	new_reg_entry(&ptr, type);
+	new_reg_entry(ptr, type);
 	return (ptr);
 }

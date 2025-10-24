@@ -25,9 +25,10 @@ static void xfree_entry(t_reg_entry *reg) {
 	
 	arrays must be NULL terminated
 */
-void xfree(void *address) {
-	void **addr = (void **)address;
+void xfree(void *address_ptr) {
+	// void **addr = (void **)address;
 	t_registry *registry = *registry_addr();
+	uintptr_t address = (uintptr_t)address_ptr;
 	int i = 0;
 
 	while (i < registry->count) {
@@ -35,10 +36,9 @@ void xfree(void *address) {
 			registry = (t_registry *)registry->reg[LASTENTRY]; i = 0;
 		}
 		t_reg_entry *reg = registry->reg[i];
-		if (reg && reg->address == *addr) {
+		if (reg && reg->pointsto == address) {
 			xfree_entry(reg);
 			registry->reg[i] = NULL;
-			*addr = NULL;
 			if (registry->count != MAXCOUNT)
 				registry->count--;
 			move_entries_back(registry, i);

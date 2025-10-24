@@ -60,13 +60,16 @@ void	write_str(char *str)
 int main() {
 	char *str = create_str();
 	char **arr = create_arr();
-	char *str2 = create_str2();
+	char *str2 = create_str();
 
-	write_str(str);
 	print_arr(arr);
+	xfree(arr);
+	xfree(str);
+	char *str3 = create_str();
 	write_str(str2);
-	xfree(&arr);
-	print_arr(arr);
+	xfree(str2);
+	xfree(str3);
+
 	xexit(0);
 }
 

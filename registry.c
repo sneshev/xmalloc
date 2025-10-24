@@ -39,14 +39,15 @@ t_registry *get_registry()
 	return (registry);
 }
 
-void new_reg_entry(void **address, t_reg_type type)
+void new_reg_entry(void *address, t_reg_type type)
 {
 	t_registry	*registry = get_registry();
 	t_reg_entry	*entry = calloc(1, sizeof(t_reg_entry));
 	if (!entry)
 		xerr();
 
-	entry->address = *address;
+	entry->address = address;
+	entry->pointsto = (uintptr_t)address;
 	entry->type = type;
 	registry->reg[registry->count] = entry;
 	registry->count++;

@@ -1,6 +1,8 @@
 #ifndef XMALLOC_H
 # define XMALLOC_H
 
+# include <stdio.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -26,6 +28,7 @@ typedef enum e_reg_type
 typedef struct s_reg_entry
 {
 	void		*address;
+	uintptr_t	pointsto;
 	t_reg_type	type;
 }	t_reg_entry;
 
