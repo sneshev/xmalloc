@@ -43,5 +43,6 @@ This custom-made library holds various functions to help you keep a registry of 
 #### xexit(int status)
 -> Destroys registry and exits with status
 
+![structs](README_assets/structs.png)
 ![registry](README_assets/regi.png)
 
