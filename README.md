@@ -8,6 +8,7 @@ This custom-made library holds various functions to help you keep a registry of 
 
 ![valgrind](README_assets/valgrind_image.png)
 <p align="center"><i>ℹ️ Allocations that were not made using functions of the library are not kept in the registry</i></p>
+
 ## Functions in the library
 
 ### Allocating memory:
