@@ -8,7 +8,7 @@ This custom-made library holds various functions to help you keep a registry of 
 
 ## Functions in the library
 ### Allocating memory:
-#### xmalloc(size_t nmemb, t_reg_type type)
+<h4 align="center">xmalloc(size_t nmemb, t_reg_type type)</h4>
 -> Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
 
 <h4 align="center">xcalloc(size_t nmemb, t_reg_type type)</h4>
