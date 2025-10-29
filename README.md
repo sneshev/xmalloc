@@ -5,3 +5,19 @@ This custom-made library holds various functions to help you keep a registry of 
 - No risks of double free
 - Use xfree() to free any data type and everything it points to
 - Easily add custom structs and data types
+
+## Available functions
+### Allocating memory:
+#### xmalloc(size_t nmemb, t_reg_type type)
+
+#### xcalloc(size_t nmemb, t_reg_type type)
+
+### Freeing memory:
+#### xfree(void *address)
+
+#### xfree_ptr(void *address)
+
+### Other
+#### xfree_registry(void)
+
+#### xexit(int status)
