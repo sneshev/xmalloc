@@ -3,23 +3,40 @@
 static void	free_2darr(void *address)
 {
 	void	**arr;
+	int		i;
 
+	if (!address)
+		return ;
 	arr = (void **)address;
-	for (int i = 0; arr[i]; i++)
+	i = 0;
+	while (arr[i])
+	{
 		xfree(arr[i]);
+		i++;
+	}
 	free(arr);
 }
 
 static void	free_3darr(void *address)
 {
 	void	***arr;
+	int		i;
+	int		j;
 
+	if (!address)
+		return ;
 	arr = (void ***)address;
-	for (int i = 0; arr[i]; i++)
+	i = 0;
+	while (arr[i])
 	{
-		for (int j = 0; arr[i][j]; j++)
+		j = 0;
+		while (arr[i][j])
+		{
 			xfree(arr[i][j]);
+			j++;
+		}
 		xfree(arr[i]);
+		i++;
 	}
 	free(arr);
 }
