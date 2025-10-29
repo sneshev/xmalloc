@@ -4,7 +4,8 @@
 #define MEMERRORLEN 34
 #define MEMERRORCODE 2
 
-void xerr() {
+void	xerr(void)
+{
 	write(2, MEMERROR, MEMERRORLEN);
 	xexit(MEMERRORCODE);
 }

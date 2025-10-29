@@ -1,6 +1,6 @@
 #include "../xmalloc.h"
 
-size_t find_size(t_reg_type type)
+size_t	find_size(t_reg_type type)
 {
 	if (type == XCHAR)
 		return (sizeof(char));

@@ -1,11 +1,11 @@
 #include "../xmalloc.h"
 
-void 			new_reg_entry(void *address, t_reg_type type);
+void	new_reg_entry(void *address, t_reg_type type);
 size_t	find_size(t_reg_type type);
 
-void xerr();
+void	xerr(void);
 
-size_t find_size(t_reg_type type);
+size_t	find_size(t_reg_type type);
 
 /*
 	Allocates NMEMB elements of XTYPE. Sets all bytes to 0.
@@ -13,14 +13,13 @@ size_t find_size(t_reg_type type);
 
 	Initializes registry if it isn't already.
 */
-void *xcalloc(size_t nmemb, t_reg_type type)
+void	*xcalloc(size_t nmemb, t_reg_type type)
 {
-	void *ptr;
+	void	*ptr;
 
 	ptr = calloc(nmemb, find_size(type));
 	if (!ptr)
 		xerr();
-	
 	new_reg_entry(ptr, type);
 	return (ptr);
 }

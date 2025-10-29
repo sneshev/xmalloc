@@ -6,8 +6,7 @@
 # include <unistd.h>
 
 # define MAXCOUNT 128
-# define LASTENTRY (MAXCOUNT - 1)
-# define ISTOOMUCH > 100
+# define LASTENTRY 127
 
 typedef enum e_reg_type
 {
@@ -38,14 +37,15 @@ typedef struct s_registry
 	int			count;
 }	t_registry;
 
+typedef void	(*t_free_func)(void *);
 
-void *xmalloc(size_t nmemb, t_reg_type type);
-void *xcalloc(size_t nmemb, t_reg_type type);
+void	*xmalloc(size_t nmemb, t_reg_type type);
+void	*xcalloc(size_t nmemb, t_reg_type type);
 
-void xfree(void *address);
-void xfree_ptr(void *address);
-void xfree_registry(); // frees whole registry and destroys it
+void	xfree(void *address);
+void	xfree_ptr(void *address);
+void	xfree_registry(void); // frees whole registry and destroys it
 
-void xexit(int status); // destroys registry and exits with status
+void	xexit(int status); // destroys registry and exits with status
 
 #endif
