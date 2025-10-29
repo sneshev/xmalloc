@@ -21,6 +21,8 @@ This custom-made library holds various functions to help you keep a registry of 
 
 Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
 
+<p align="center"><i>ℹ️ If allocation fails, registry is destroyed, and program exits with exit code MEMERRORCODE</i></p>
+
 ### Freeing memory:
 
 #### xfree(void *address)
