@@ -47,5 +47,7 @@ Additionally:
 #### xexit(int status)
 -> Destroys registry and exits with status
 
+## Implemented structs
+
 ![structs](README_assets/structs.png)
 
