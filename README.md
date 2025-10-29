@@ -31,6 +31,8 @@ Searches the alloc registry for the entry. Frees its address and any subaddress 
 #### xfree_ptr(void *address)
 Frees the address and deletes it from the registry. Does not free anything else.
 
+<p align="center"><i>ℹ️ If the address is not found in the registry nothing gets freed (preventing errors)</i></p>
+
 ### Other
 
 <h4 align="center">xfree_registry(void)</h4>
