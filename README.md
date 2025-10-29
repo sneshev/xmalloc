@@ -13,7 +13,9 @@ This custom-made library holds various functions to help you keep a registry of 
 
 ### Allocating memory:
 
-<h3 style="font-weight:normal; color:gray;">xmalloc(size_t nmemb, t_reg_type type)</h3>
+##### xmalloc(size_t nmemb, t_reg_type type)
+
+<!-- <h3 style="font-weight:normal; color:gray;">What I Learned</h3> -->
 
 <!-- <h4 align="center">xmalloc(size_t nmemb, t_reg_type type)</h4> -->
 Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
