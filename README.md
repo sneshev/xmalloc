@@ -6,6 +6,8 @@ This custom-made library holds various functions to help you keep a registry of 
 - Use xfree() to free any data type and everything it points to
 - Easily add custom structs and data types
 
+![valgrind](README_assets/valgrind_image.png)
+
 ## Functions in the library
 
 ### Allocating memory:
