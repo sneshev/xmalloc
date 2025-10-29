@@ -5,7 +5,7 @@ This custom-made library holds various functions to help you keep a registry of 
 - No risks of double free
 - Use xfree() to free any data type and everything it points to
 - Easily add custom structs and data types
-- No global variables used (using static variable as a get-around)
+- No global variables (using static variable as a get-around)
 
 ![valgrind](README_assets/valgrind_image.png)
 <p align="center"><i>ℹ️ Allocations that were not made using functions of the library are not kept in the registry</i></p>
