@@ -15,21 +15,18 @@ This custom-made library holds various functions to help you keep a registry of 
 
 #### xmalloc(size_t nmemb, t_reg_type type)
 
-<!-- <h3 style="font-weight:normal; color:gray;">What I Learned</h3> -->
-
-<!-- <h4 align="center">xmalloc(size_t nmemb, t_reg_type type)</h4> -->
 -> Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
 
-<h4 align="center">xcalloc(size_t nmemb, t_reg_type type)</h4>
+#### xcalloc(size_t nmemb, t_reg_type type)
 
 Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
 
 ### Freeing memory:
 
-<h4 align="center">xfree(void *address)</h4>
+#### xfree(void *address)
 Searches the alloc registry for the entry. Frees its address and any subaddress available. For example, if you pass char **, frees with free_arr(). arrays must be NULL-ed.
 
-<h4 align="center">xfree_ptr(void *address)</h4>
+#### xfree_ptr(void *address)
 Frees the address and deletes it from the registry. Does not free anything else.
 
 ### Other
