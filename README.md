@@ -13,7 +13,7 @@ This custom-made library holds various functions to help you keep a registry of 
 
 ### Allocating memory:
 
-##### xmalloc(size_t nmemb, t_reg_type type)
+#### xmalloc(size_t nmemb, t_reg_type type)
 
 <!-- <h3 style="font-weight:normal; color:gray;">What I Learned</h3> -->
 
