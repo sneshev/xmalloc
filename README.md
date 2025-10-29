@@ -44,3 +44,4 @@ This custom-made library holds various functions to help you keep a registry of 
 -> Destroys registry and exits with status
 
 ![registry](README_assets/regi.png)
+
