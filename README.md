@@ -43,4 +43,4 @@ This custom-made library holds various functions to help you keep a registry of 
 #### xexit(int status)
 -> Destroys registry and exits with status
 
-![registry](README_assets/reg.png)
+![registry](README_assets/regi.png)
