@@ -4,8 +4,11 @@ This custom-made library holds various functions to help you keep a registry of 
 - No need for NULL checks after allocating
 - No risks of double free
 - Use xfree() to free any data type and everything it points to
-- Easily add custom structs and data types
+
+Additionally:
+- Follows the Norm (official coding style guide of 42 Network)
 - No global variables (using static variable as a get-around)
+- Easily add custom structs and data types
 
 ![valgrind](README_assets/valgrind_image.png)
 <p align="center"><i>ℹ️ Allocations that were not made using functions of the library are not kept in the registry</i></p>
