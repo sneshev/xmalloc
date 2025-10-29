@@ -9,9 +9,9 @@ This custom-made library holds various functions to help you keep a registry of 
 ## Functions in the library
 ### Allocating memory:
 #### xmalloc(size_t nmemb, t_reg_type type)
-	Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
+Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
 #### xcalloc(size_t nmemb, t_reg_type type)
-	Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
+Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
 ### Freeing memory:
 #### xfree(void *address)
 
