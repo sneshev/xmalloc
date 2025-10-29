@@ -31,6 +31,7 @@ This custom-made library holds various functions to help you keep a registry of 
 
 #### xfree_ptr(void *address)
 -> Frees the address and deletes it from the registry. Does not free anything else.
+![freeing](README_assets/free.png)
 
 <p align="center"><i>ℹ️ If the address is not found in the registry nothing gets freed (preventing errors)</i></p>
 
@@ -44,5 +45,4 @@ This custom-made library holds various functions to help you keep a registry of 
 -> Destroys registry and exits with status
 
 ![structs](README_assets/structs.png)
-![registry](README_assets/regi.png)
 
