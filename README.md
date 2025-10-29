@@ -7,19 +7,29 @@ This custom-made library holds various functions to help you keep a registry of 
 - Easily add custom structs and data types
 
 ## Functions in the library
+
 ### Allocating memory:
+
 <h4 align="center">xmalloc(size_t nmemb, t_reg_type type)</h4>
--> Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
+Allocates NMEMB elements of XTYPE. Stores it in a registry of all xallocs. Initializes registry if it isn't already.
 
 <h4 align="center">xcalloc(size_t nmemb, t_reg_type type)</h4>
 
--> Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
-### Freeing memory:
-#### xfree(void *address)
+Allocates NMEMB elements of XTYPE. Sets all bytes to 0. Stores entry in a registry of all xallocs. Initializes registry if it isn't already.
 
-#### xfree_ptr(void *address)
+### Freeing memory:
+
+<h4 align="center">xfree(void *address)</h4>
+Searches the alloc registry for the entry. Frees its address and any subaddress available. For example, if you pass char **, frees with free_arr(). arrays must be NULL-ed.
+
+<h4 align="center">xfree_ptr(void *address)</h4>
+Frees the address and deletes it from the registry. Does not free anything else.
 
 ### Other
-#### xfree_registry(void)
 
-#### xexit(int status)
+<h4 align="center">xfree_registry(void)</h4>
+
+Frees whole registry and destroys it
+
+<h4 align="center">xexit(int status)</h4>
+Destroys registry and exits with status
